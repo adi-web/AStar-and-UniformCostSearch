@@ -10,6 +10,9 @@ class Node:
     def __str__(self):
         return f"Node with x={self.x} and y={self.y}"
 
+    def __repr__(self):
+        return f"Node with x={self.x} and y={self.y}"
+
     def getX(self):
         return self.x
 
@@ -30,3 +33,13 @@ class Node:
 
     def setF(self, new_f):
         self.f = new_f
+
+    def getH(self):
+        return self.h
+    def getG(self):
+        return self.g
+    def getF(self):
+        return self.f
+
+    def getVertex(self):
+        return (self.x,self.y)

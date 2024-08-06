@@ -1,4 +1,5 @@
 from grapth import Grapth
+from Astar_algorithm import AStar
 
 if __name__ == '__main__':
 
@@ -47,7 +48,8 @@ if __name__ == '__main__':
                     #una volta avuto lo start e l'end si chiama la funzione vertex_straightline
                    # a.vertex_straightline(start_vertex,end_vertex,pol)
 
-    a.find_intersection(pol,( 1,1), -1)
+    a.find_intersection(pol,( 4,2), -1)
+    pol.append([(4,2)])
     a.find_intersection(pol, (11, 7), -1)
 
     for i in range(len(pol)):
@@ -56,12 +58,10 @@ if __name__ == '__main__':
             #a.vertex_straightline(i,pol,j)
 
     #a.vertex_straightline((2,6),(7,5),polygon3)
+    AStar((4, 2), (11, 7), a)
     a.add_node(4,3)
-    a.add_node(6,1)
-    a.add_node(7,4)
-    a.add_neighbors(4,3,2,1)
-    a.add_neighbors(4, 3, 8, 1)
-    a.add_neighbors(4, 3, 3, 1)
-    a.add_neighbors(7,4,9,4)
-    a.segmente_intersection((1,2),(4,2),(3,4),(3,0))
+
+
+
+
     #a.print_grapth()
