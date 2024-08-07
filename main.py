@@ -1,3 +1,4 @@
+from Uniform_Cost_Search_algorithm import Uniform_Cost_Search
 from grapth import Grapth
 from Astar_algorithm import AStar
 
@@ -13,7 +14,8 @@ if __name__ == '__main__':
     polygon1=[(2,6),(2,9),(5,9),(5,6)]
     polygon2=[(7,2),(7,5),(11,5),(11,2)]
     polygon3=[(5,2),(5,3),(6,3),(6,2)]
-
+    #polygon1=[(5,6),(5,11),(10,8)]
+    #polygon2=[(11,6),(13,9),(17,7),(16,3),(13,2)]
     pol=[]
     pol.append(polygon1)
     pol.append(polygon2)
@@ -48,9 +50,10 @@ if __name__ == '__main__':
                     #una volta avuto lo start e l'end si chiama la funzione vertex_straightline
                    # a.vertex_straightline(start_vertex,end_vertex,pol)
 
-    a.find_intersection(pol,( 4,2), -1)
-    pol.append([(4,2)])
-    a.find_intersection(pol, (11, 7), -1)
+
+  #  a.find_intersection(pol,( 3,11), -1)
+   # pol.append([( 3,11)])
+    a.find_intersection(pol, (13,4), -1)
 
     for i in range(len(pol)):
         for j in pol[i]:
@@ -58,10 +61,5 @@ if __name__ == '__main__':
             #a.vertex_straightline(i,pol,j)
 
     #a.vertex_straightline((2,6),(7,5),polygon3)
-    AStar((4, 2), (11, 7), a)
-    a.add_node(4,3)
-
-
-
-
-    #a.print_grapth()
+    AStar( ( 2,9),(13, 4), a)
+    Uniform_Cost_Search(( 2,9), (13, 4), a)
