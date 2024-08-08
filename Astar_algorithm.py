@@ -9,15 +9,15 @@ def distance(vertex, goal):
     return round(math.sqrt(d),3)
 
 
-def AStar(vertex_start,vertex_goal,grapth):
+def AStar(vertex_start, vertex_goal, graph):
     closedset=[]
     openset=[]
     came_from={}
-    openset.append(grapth.nodes[vertex_start])
-    grapth.nodes[vertex_start].setG(0)
-    grapth.nodes[vertex_start].setH(distance(vertex_start, vertex_goal))
-    f_score=grapth.nodes[vertex_start].getG()+grapth.nodes[vertex_start].getH()
-    grapth.nodes[vertex_start].setF(f_score)
+    openset.append(graph.nodes[vertex_start])
+    graph.nodes[vertex_start].setG(0)
+    graph.nodes[vertex_start].setH(distance(vertex_start, vertex_goal))
+    f_score= graph.nodes[vertex_start].getG() + graph.nodes[vertex_start].getH()
+    graph.nodes[vertex_start].setF(f_score)
 
     print(" ")
     while openset is not []:
@@ -33,7 +33,7 @@ def AStar(vertex_start,vertex_goal,grapth):
        openset.remove(current)
 
 
-       for node_current,node_neighbor in grapth.neighbors[current.getVertex()].items():
+       for node_current,node_neighbor in graph.neighbors[current.getVertex()].items():
             if node_neighbor in closedset:
                 continue
 

@@ -1,5 +1,5 @@
 from Uniform_Cost_Search_algorithm import Uniform_Cost_Search
-from grapth import Grapth
+from graph import Grapth
 from Astar_algorithm import AStar
 
 if __name__ == '__main__':

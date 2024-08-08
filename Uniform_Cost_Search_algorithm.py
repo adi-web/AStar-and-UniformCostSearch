@@ -9,11 +9,11 @@ def distance(vertex, goal):
 
 
 
-def Uniform_Cost_Search(vertex_start,vertex_goal,grapth):
+def Uniform_Cost_Search(vertex_start, vertex_goal, graph):
     openset = []
     closedset = []
-    openset.append(grapth.nodes[vertex_start])
-    grapth.nodes[vertex_start].setG(0)
+    openset.append(graph.nodes[vertex_start])
+    graph.nodes[vertex_start].setG(0)
     came_from={}
     while openset is not []:
         current = openset[0]
@@ -27,7 +27,7 @@ def Uniform_Cost_Search(vertex_start,vertex_goal,grapth):
         closedset.append(current)
         openset.remove(current)
 
-        for node_current, node_neighbor in grapth.neighbors[current.getVertex()].items():
+        for node_current, node_neighbor in graph.neighbors[current.getVertex()].items():
             distance_node=current.getG()+distance(current.getVertex(), node_neighbor.getVertex())
             if node_neighbor not in openset and node_neighbor not in closedset:
                 came_from[node_neighbor.getVertex()] = current
