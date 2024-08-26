@@ -26,32 +26,27 @@ if __name__ == '__main__':
     a=Grapth()
     print(pol)
 
-    for index in range(len(pol)):
-        for valure_in_pol in range(len(pol[index])):
-            # valure_in_pol sarebbe il start_vertex che dobbiamo vedere con
-            # quali altri nodi può essere collegato direttamente
-            start_vertex=pol[index][valure_in_pol]
+    for index_pol in range(len(pol)):
+        for index_vertex_pol in range(len(pol[index_pol])):
+            # start_vertex identifica il primo vertice che devo collegare con il vertice end_vertex
+            start_vertex=pol[index_pol][index_vertex_pol]
             a.add_node(start_vertex[0], start_vertex[1])
-            if valure_in_pol == len(pol[index])-1:
-                a.add_neighbors(start_vertex[0], start_vertex[1], pol[index][0][0],
-                                pol[index][0][1])
+
+
+            #permette di salvare i neighbors dello stesso poligono identificato da index_pol
+            if index_vertex_pol == len(pol[index_pol])-1:
+                a.add_neighbors(start_vertex[0], start_vertex[1], pol[index_pol][0][0],
+                                pol[index_pol][0][1])
             else:
-                a.add_neighbors(start_vertex[0], start_vertex[1], pol[index][valure_in_pol + 1][0],
-                            pol[index][valure_in_pol + 1][1])
+                a.add_neighbors(start_vertex[0], start_vertex[1], pol[index_pol][index_vertex_pol + 1][0],
+                                pol[index_pol][index_vertex_pol + 1][1])
 
-            a.find_intersection(pol,start_vertex,index)
-           # for index2 in range(len(pol)):
-                #if index2==index:
-                    #continue
-              #  for valure_in_pol2 in range(len(pol[index2])):
-                    #qua troviamo l'end e vediamo se puo essere collegato direttamente
-                   # end_vertex=pol[index2][valure_in_pol2]
-
-                    #una volta avuto lo start e l'end si chiama la funzione vertex_straightline
-                   # a.vertex_straightline(start_vertex,end_vertex,pol)
+            #funzione che permette di identificare con quali vertici end_vertex possiamo collegare lo start_vertex in linea retta
+            a.find_intersection(pol, start_vertex, index_pol)
 
 
-  #  a.find_intersection(pol,( 3,11), -1)
+
+   # a.find_intersection(pol,( 3,11), -1)
    # pol.append([( 3,11)])
     a.find_intersection(pol, (13,4), -1)
 

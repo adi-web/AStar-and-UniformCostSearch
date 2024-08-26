@@ -3,6 +3,8 @@ class Node:
         self.x=x
         self.y=y
         self.g=None
+
+        # variabili solo per A*
         self.h=None
         self.f=None
 
