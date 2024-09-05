@@ -1,4 +1,4 @@
-## Progetto IA
+## IA A* e Uniform Cost Search
 # Run main.py :
 **Output Astar and Uniform cost Search**:
 - nodi esaminati durante il processo per trovare il path migliore
