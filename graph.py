@@ -15,8 +15,8 @@ class Grapth:
         if position not in self.nodes:
             self.nodes[position]=Node(x,y)
             self.neighbors[position]={}
-        else:
-            print("nodo presente")
+        #else:
+            #print("nodo presente")
 
         return self.nodes[position]
 
@@ -99,9 +99,9 @@ class Grapth:
                 if self.segment_intersection(start_vertex, end_vertex, polygon[index_pol][index_vertex_pol], polygon[index_pol][next_vertex_control]) is True:
                     intersection=True
                     break
-                else:
+                #else:
                     #print("no intersection tra il segmento "+ start_vertex + " e "+ end_vertex+ " e il segmento :"+polygon[index_pol][index_vertex_pol] + " e "+polygon[index_pol][index_vertex_pol + 1] )
-                    print("no intersection ")
+                     #print("no intersection ")
 
 
         if intersection is False:

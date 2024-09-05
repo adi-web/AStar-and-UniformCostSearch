@@ -10,8 +10,11 @@ def distance(vertex, goal):
 
 
 def AStar(vertex_start, vertex_goal, graph):
+    # lista che contiene nodi esaminati
     closedset=[]
+    #lista che contiene nodi da esplorare
     openset=[]
+    #lista per ricostruire il path
     came_from={}
     openset.append(graph.nodes[vertex_start])
     graph.nodes[vertex_start].setG(0)
@@ -19,12 +22,14 @@ def AStar(vertex_start, vertex_goal, graph):
     f_score= graph.nodes[vertex_start].getG() + graph.nodes[vertex_start].getH()
     graph.nodes[vertex_start].setF(f_score)
 
+    print("Nodi esaminati in A*")
     print(" ")
     while openset is not []:
        current=openset[0]
        if current.getVertex()==(vertex_goal):
            #reconstruct_path(came_from,current)
-          print("astar")
+
+          print("astar nodi esaminti: ")
           print(closedset.__len__())
           return print( reconstruct_path(came_from,current))
 
@@ -34,6 +39,7 @@ def AStar(vertex_start, vertex_goal, graph):
 
 
        for node_current,node_neighbor in graph.neighbors[current.getVertex()].items():
+
             if node_neighbor in closedset:
                 continue
 

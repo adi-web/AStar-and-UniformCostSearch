@@ -15,6 +15,7 @@ def Uniform_Cost_Search(vertex_start, vertex_goal, graph):
     openset.append(graph.nodes[vertex_start])
     graph.nodes[vertex_start].setG(0)
     came_from={}
+    print("Nodi esaminati in Uniform cost search ")
     while openset is not []:
         current = openset[0]
 
