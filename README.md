@@ -15,4 +15,4 @@
   
 # Esempio di prova: 
 
-![Uploading unnamed.jpg…]()
+![unnamed](https://github.com/user-attachments/assets/d6195c93-b437-4758-b984-42b649c38ac5)
